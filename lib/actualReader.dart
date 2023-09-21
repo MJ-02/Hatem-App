@@ -1,11 +1,10 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:untitled2/document_model.dart';
-import 'package:untitled2/chat_screen.dart';
-import 'package:untitled2/PDFselecter.dart';
 
 class actualReader extends StatefulWidget {
-  actualReader(this.doc ,{super.key});
+  actualReader(this.doc, {super.key});
   Document doc;
 
   @override
@@ -17,7 +16,7 @@ class _actualReaderState extends State<actualReader> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.blue,
         title: Text(widget.doc.doc_title!),
       ),
       body: Container(

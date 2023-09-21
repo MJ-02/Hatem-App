@@ -5,10 +5,8 @@ import 'package:untitled2/chat_screen.dart';
 import 'package:untitled2/PDFselecter.dart';
 import 'package:untitled2/actualReader.dart';
 
-
-
 class ReaderScreen extends StatefulWidget {
-  ReaderScreen(this.doc , {super.key});
+  ReaderScreen(this.doc, {super.key});
 
   Document doc;
 
@@ -16,11 +14,9 @@ class ReaderScreen extends StatefulWidget {
   State<ReaderScreen> createState() => _ReaderScreenState();
 }
 
-
 class _ReaderScreenState extends State<ReaderScreen> {
-  final List<Widget> pages = [actualReader(D), ChatScreen()];
+  final List<Widget> pages = [actualReader(D), const ChatScreen()];
   int selectedIndex = 0;
-
 
   @override
   Widget build(BuildContext context) {
@@ -38,20 +34,16 @@ class _ReaderScreenState extends State<ReaderScreen> {
         children: pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: "دراسة"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
-              label: "اٍسأل"
-          )
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "دراسة"),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "اٍسأل")
         ],
         currentIndex: selectedIndex,
-        onTap: (int index){setState(() {
-          selectedIndex = index;
-        });},
+        onTap: (int index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
       ),
     );
   }

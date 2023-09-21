@@ -16,18 +16,16 @@ class NavBar extends StatelessWidget {
                 color: Colors.black38,
               ),
             ),
-
             accountEmail: const Text(
               "TestUser12345@gmail.com",
             ),
-
             currentAccountPicture: ClipOval(
               child: Image.asset('assets/blank.png'),
             ),
-            decoration: BoxDecoration(
-              color: Colors.lightGreenAccent,
-              image: DecorationImage(image: AssetImage('assets/school.jpg'), fit: BoxFit.cover)
-            ),
+            decoration: const BoxDecoration(
+                color: Colors.lightGreenAccent,
+                image: DecorationImage(
+                    image: AssetImage('assets/school.jpg'), fit: BoxFit.cover)),
           ),
           // ListTile(
           //   leading: ,

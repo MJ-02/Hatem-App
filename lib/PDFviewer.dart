@@ -6,7 +6,6 @@ import 'package:untitled2/navBar.dart';
 import 'package:untitled2/chat_screen.dart';
 import 'package:untitled2/PDFselecter.dart';
 
-
 class PDFviewer extends StatefulWidget {
   const PDFviewer({super.key});
 
@@ -15,7 +14,7 @@ class PDFviewer extends StatefulWidget {
 }
 
 class _PDFviewerState extends State<PDFviewer> {
-  final List<Widget> pages = [Selecter(), ChatScreen()];
+  final List<Widget> pages = const [Selecter(), ChatScreen()];
   int selectedIndex = 0;
 
   @override
@@ -34,22 +33,17 @@ class _PDFviewerState extends State<PDFviewer> {
       ),
 
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: "دراسة"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.chat),
-              label: "اٍسأل"
-          )
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "دراسة"),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "اٍسأل")
         ],
         currentIndex: selectedIndex,
-        onTap: (int index){setState(() {
-          selectedIndex = index;
-        });},
+        onTap: (int index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
       ),
     );
   }
 }
-
