@@ -67,6 +67,9 @@ class _ChatScreenState extends State<ChatScreen> {
 
 // Modify your _sendMessage method to handle the server response
   void _sendMessage() async {
+    if (_controller.text == "" || _controller.text.isEmpty) {
+      return;
+    }
     ChatMessage _message =
         ChatMessage(text: _controller.text, sender: "user", isBot: false);
 
